@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.sahayadriapp">
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.SAHAYADRIAPP"
+        tools:targetApi="33">
+        <activity
+            android:name=".leavehistory"
+            android:exported="false" />
+        <activity
+            android:name=".Confirmation"
+            android:exported="false" />
+        <activity
+            android:name=".Notices"
+            android:exported="false"
+            android:label="Notices"
+            android:parentActivityName=".AfterLogin" />
+        <activity
+            android:name=".Issues"
+            android:exported="false"
+            android:label="Issues"
+            android:parentActivityName=".AfterLogin" />
+        <activity
+            android:name=".PayFees"
+            android:exported="false"
+            android:label="Pay Fees"
+            android:parentActivityName=".AfterLogin" />
+        <activity
+            android:name=".Applyfroleave"
+            android:exported="false"
+            android:label="Apply For Leave"
+            android:parentActivityName=".AfterLogin" />
+        <activity
+            android:name=".ui.login.LoginActivity"
+            android:exported="false"
+            android:label="@string/title_activity_login" />
+        <activity
+            android:name=".AfterLogin"
+            android:exported="false" />
+        <activity
+            android:name=".SignUp"
+            android:exported="false" />
+        <activity
+            android:name=".Splashactivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".LogIN"
+            android:exported="false" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
