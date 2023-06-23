@@ -12,6 +12,10 @@ import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.HashMap;
@@ -19,7 +23,8 @@ import java.util.Map;
 
 public class Issues extends AppCompatActivity {
   private EditText name,usn,roomno,description;
-  private Button btn;
+  private Button subbtn;
+    public static final String ISSUE_USN="com.example.sahyadriapp.issueUSN";
     FirebaseFirestore db;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,11 +34,16 @@ public class Issues extends AppCompatActivity {
         EditText usn= findViewById(R.id.editTextTextPersonName1);
         EditText roomno= findViewById(R.id.editTextTextPersonName21);
         EditText description= findViewById(R.id.editTextTextPersonName2);
-        Button btn=findViewById(R.id.button);
+        Button subbtn=findViewById(R.id.button);
+        Intent intent = getIntent();
+        String usn456=intent.getStringExtra(ISSUE_USN);
+        usn.setText(usn456);
+        usn.setFocusableInTouchMode(false);
 
         db = FirebaseFirestore.getInstance();
 
-        btn.setOnClickListener(new View.OnClickListener() {
+
+        subbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String name1 = name.getText().toString().trim();

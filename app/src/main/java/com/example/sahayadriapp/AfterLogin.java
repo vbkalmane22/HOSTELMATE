@@ -32,9 +32,11 @@ public class AfterLogin extends AppCompatActivity {
     private TextView textusn;
     private TextView textbranch;
      BottomNavigationView btm;
-    public static final String EXTRA_NAME="com.example.sahayadriapp.extra.name";
+
     public static final String EXTRA_USN="com.example.sahayadriapp.extra.USN";
     public static String USN="com.example.sahyadriapp.USN";
+    public static final String FEES_USN="com.example.sahyadriapp.feeUSN";
+    public static final String ISSUE_USN="com.example.sahyadriapp.issueUSN";
 
 
 
@@ -96,7 +98,7 @@ public class AfterLogin extends AppCompatActivity {
 
 
 
-         String name11=textname.getText().toString();
+
         String usn11=textusn.getText().toString();
         applyleave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,20 +109,23 @@ public class AfterLogin extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        String usn123=textusn.getText().toString();
 
         payfees.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(AfterLogin.this,PayFees.class);
+                intent.putExtra(PayFees.FEES_USN,usn123);
                 startActivity(intent);
             }
         });
 
-
+        String usn1234=textusn.getText().toString();
         issues.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent=new Intent(AfterLogin.this,Issues.class);
+                intent.putExtra(ISSUE_USN,usn1234);
                 startActivity(intent);
             }
         });

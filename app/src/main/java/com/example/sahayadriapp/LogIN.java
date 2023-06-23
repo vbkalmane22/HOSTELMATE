@@ -98,11 +98,13 @@ public static final String SHARED_PREFS="sharedPrefs";
                                     }
                                     else{
                                         password_var.setError("Wrong Password");
+                                        progressDialog.dismiss();
                                     }
                                 }
                                 else
                                 {
                                     usn_var.setError("USN Does not exists");
+                                    progressDialog.dismiss();
                                 }
                             }
 

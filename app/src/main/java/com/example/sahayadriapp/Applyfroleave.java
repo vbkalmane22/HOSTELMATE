@@ -55,6 +55,26 @@ public class Applyfroleave extends AppCompatActivity {
         usn.setText(usn2);
         usn.setFocusableInTouchMode(false);
 
+
+
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("datauser");
+        reference.orderByChild("usn").equalTo(usn2).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    String name1 = childSnapshot.child("name").getValue(String.class);
+                    name.setText(name1);
+                    name.setFocusableInTouchMode(false);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Handle error
+            }
+        });
+
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

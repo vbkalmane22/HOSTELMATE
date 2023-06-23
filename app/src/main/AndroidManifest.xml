@@ -32,17 +32,14 @@
         <activity
             android:name=".PayFees"
             android:exported="false"
-            android:label="Pay Fees"
+            android:label="View Fees"
             android:parentActivityName=".AfterLogin" />
         <activity
             android:name=".Applyfroleave"
             android:exported="false"
             android:label="Apply For Leave"
             android:parentActivityName=".AfterLogin" />
-        <activity
-            android:name=".ui.login.LoginActivity"
-            android:exported="false"
-            android:label="@string/title_activity_login" />
+
         <activity
             android:name=".AfterLogin"
             android:exported="false" />

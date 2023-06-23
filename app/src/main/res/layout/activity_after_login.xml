@@ -6,17 +6,21 @@
     android:layout_height="match_parent"
     tools:context=".AfterLogin">
 
-
-   <View
-       android:layout_width="410dp"
-       android:layout_height="274dp"
-       android:background="@drawable/after_login_back"/>
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="match_parent"
+        android:layout_height="284dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="567dp"
+        android:background="@drawable/after_login_back" />
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="347dp"
         android:layout_height="210dp"
         android:layout_marginLeft="23dp"
-        android:layout_marginTop="100dp">
+        android:layout_marginTop="80dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="347dp"
@@ -136,13 +140,13 @@
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
-        android:layout_marginBottom="366dp"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="368dp"
         android:fontFamily="@font/space_grotesk_bold"
-        android:text="Pay the Fees"
+        android:text="View the Fees"
         android:textColor="#ffffff"
-        android:textSize="25sp" />
+        android:textSize="23sp" />
 
     <TextView
         android:id="@+id/textView8"
@@ -235,7 +239,7 @@
         app:iconTint="#1C0202" />
 
     <TextView
-        android:id="@+id/textView10"
+        android:id="@+id/textView100"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
@@ -263,19 +267,6 @@
         app:itemIconSize="30dp"
         app:itemIconTint="@color/black"
         app:menu="@menu/item_menu" />
-
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginBottom="775dp"
-        android:fontFamily="@font/space_grotesk_bold"
-        android:text="HOSTELMATE"
-        android:textColor="#ffffff"
-        android:textSize="25sp" />
 
 
 </RelativeLayout>
