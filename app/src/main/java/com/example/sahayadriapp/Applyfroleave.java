@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.net.wifi.WifiEnterpriseConfig;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -91,21 +92,46 @@ public class Applyfroleave extends AppCompatActivity {
                   if(!name1.isEmpty())
                   {
                       name.setError((null));
+
+                  }
+                  else
+                  {
+                      name.setError("Enter name");
+                      progressDialog.dismiss();
                   }
                 if(!usn1.isEmpty())
                 {
                     usn.setError((null));
+
+                }
+                else
+                {
+                    usn.setError("Enter USN");
+                    progressDialog.dismiss();
                 }
                 if(!reason1.isEmpty())
                 {
                     reason.setError((null));
+
+                }
+                else
+                {
+                    reason.setError("Enter reason");
+                    progressDialog.dismiss();
                 }
                 if(!parent_contact1.isEmpty())
                 {
                     parent_contact.setError((null));
+
+                }
+                else
+                {
+                    parent_contact.setError("Enter Phone number");
+                    progressDialog.dismiss();
                 }
                 if(!dateoa1.isEmpty()) {
                     dateoa.setError((null));
+                   // progressDialog.dismiss();
 
                     Map<String, Object> user = new HashMap<>();
                     user.put("name", name1);
@@ -133,6 +159,10 @@ public class Applyfroleave extends AppCompatActivity {
 
                                 }
                             });
+                }
+                else
+                {
+                    dateoa.setError("Enter date");
                 }
 
 

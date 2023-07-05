@@ -19,6 +19,7 @@ import com.google.firebase.firestore.CollectionReference;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.auth.User;
 
 
 public class leavehistory extends AppCompatActivity {
@@ -30,7 +31,7 @@ public class leavehistory extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leavehistory);
-        getSupportActionBar().hide();
+      //  getSupportActionBar().hide();
         btm = findViewById(R.id.bottom_navigation);
         TextView derived_usn=findViewById(R.id.textView21);
         TextView reason_leave =findViewById(R.id.textView13);
@@ -58,11 +59,13 @@ public class leavehistory extends AppCompatActivity {
                 switch(item.getItemId())
                 {
                     case R.id.home:startActivity(new Intent(getApplicationContext(), AfterLogin.class));
-                        overridePendingTransition(0,0);
-                        return true;
+
+
 
                     case R.id.leave:
                         return true;
+
+                    case R.id.user: startActivity(new Intent(getApplicationContext(),UserProfile.class));
 
 
 

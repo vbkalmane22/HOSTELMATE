@@ -19,7 +19,7 @@ private Button btn;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_confirmation);
-        getSupportActionBar().hide();
+      //  getSupportActionBar().hide();
         ImageView imageView=findViewById(R.id.imageView3);
         Button btn=findViewById(R.id.button8);
         btn.setOnClickListener(new View.OnClickListener() {

@@ -13,6 +13,7 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
@@ -36,11 +37,28 @@ public class Issues extends AppCompatActivity {
         EditText description= findViewById(R.id.editTextTextPersonName2);
         Button subbtn=findViewById(R.id.button);
         Intent intent = getIntent();
-        String usn456=intent.getStringExtra(ISSUE_USN);
+        String usn456=intent.getStringExtra(AfterLogin.ISSUE_USN);
         usn.setText(usn456);
         usn.setFocusableInTouchMode(false);
 
         db = FirebaseFirestore.getInstance();
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("datauser");
+        reference.orderByChild("usn").equalTo(usn456).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot childSnapshot : dataSnapshot.getChildren()) {
+                    String name1 = childSnapshot.child("name").getValue(String.class);
+                    name.setText(name1);
+                    name.setFocusableInTouchMode(false);
+
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                // Handle error
+            }
+        });
 
 
         subbtn.setOnClickListener(new View.OnClickListener() {

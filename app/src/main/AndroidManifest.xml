@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sahayadriapp">
 
+    <uses-permission android:name="android.permission.FULLSCREEN" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,6 +16,18 @@
         android:theme="@style/Theme.SAHAYADRIAPP"
         tools:targetApi="33">
         <activity
+            android:name=".ChangePassword"
+            android:exported="false" />
+        <activity
+            android:name=".Dosanddonts"
+            android:exported="false" />
+        <activity
+            android:name=".FoodMenu"
+            android:exported="false" />
+        <activity
+            android:name=".UserProfile"
+            android:exported="false" />
+        <activity
             android:name=".leavehistory"
             android:exported="false" />
         <activity
@@ -22,24 +36,19 @@
         <activity
             android:name=".Notices"
             android:exported="false"
-            android:label="Notices"
-            android:parentActivityName=".AfterLogin" />
+            android:label="Notices" />
         <activity
             android:name=".Issues"
             android:exported="false"
-            android:label="Issues"
-            android:parentActivityName=".AfterLogin" />
+            android:label="Issues" />
         <activity
             android:name=".PayFees"
             android:exported="false"
-            android:label="View Fees"
-            android:parentActivityName=".AfterLogin" />
+            android:label="View Fees" />
         <activity
             android:name=".Applyfroleave"
             android:exported="false"
-            android:label="Apply For Leave"
-            android:parentActivityName=".AfterLogin" />
-
+            android:label="Apply For Leave" />
         <activity
             android:name=".AfterLogin"
             android:exported="false" />

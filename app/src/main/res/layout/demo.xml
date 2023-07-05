@@ -1,24 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
-    android:fitsSystemWindows="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
+
     tools:openDrawer="start"
-    tools:context=".AfterLogin">
+ >
+    <androidx.appcompat.widget.Toolbar
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#000000"/>
 
-
-
-
-
+    <com.google.android.material.navigation.NavigationView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:id="@+id/nav_view"
+        app:headerLayout="@layout/header"
+        android:fitsSystemWindows="true"
+        app:menu="@menu/darwer_menu"
+        android:layout_gravity="start"/>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        >
+       >
 
         <androidx.appcompat.widget.LinearLayoutCompat
             android:layout_width="347dp"
@@ -134,7 +141,7 @@
             android:layout_marginBottom="343dp"
             android:fontFamily="@font/space_grotesk_bold"
             android:text="Apply For Leave"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="25sp" />
 
         <TextView
@@ -149,7 +156,7 @@
             android:layout_marginBottom="368dp"
             android:fontFamily="@font/space_grotesk_bold"
             android:text="View the Fees"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="23sp" />
 
         <TextView
@@ -164,7 +171,7 @@
             android:layout_marginBottom="187dp"
             android:fontFamily="@font/space_grotesk_bold"
             android:text="Issues"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="25sp" />
 
         <TextView
@@ -179,7 +186,7 @@
             android:layout_marginBottom="186dp"
             android:fontFamily="@font/space_grotesk_bold"
             android:text="Notices"
-            android:textColor="#000000"
+            android:textColor="#ffffff"
             android:textSize="25sp" />
 
         <Button
@@ -194,7 +201,7 @@
             android:layout_marginBottom="295dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             android:backgroundTint="#ffffff"
-            app:backgroundTint="#000000"
+            app:backgroundTint="#ffffff"
             app:iconTint="#1C0202" />
 
         <Button
@@ -209,7 +216,7 @@
             android:layout_marginBottom="295dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             android:backgroundTint="#000000"
-            app:backgroundTint="#000000"
+            app:backgroundTint="#ffffff"
             app:iconTint="#1C0202" />
 
         <Button
@@ -224,7 +231,7 @@
             android:layout_marginBottom="105dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             android:backgroundTint="#000000"
-            app:backgroundTint="#000000"
+            app:backgroundTint="#ffffff"
             app:iconTint="#1C0202" />
 
         <Button
@@ -239,7 +246,7 @@
             android:layout_marginBottom="105dp"
             android:background="@drawable/ic_baseline_arrow_forward_24"
             android:backgroundTint="#000000"
-            app:backgroundTint="#000000"
+            app:backgroundTint="#ffffff"
             app:iconTint="#1C0202" />
 
         <TextView
@@ -252,7 +259,7 @@
             android:layout_marginBottom="433dp"
             android:fontFamily="@font/space_grotesk_bold"
             android:text="SERVICES"
-            android:textColor="#ffffff"
+            android:textColor="#000000"
             android:textSize="20sp" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
@@ -274,7 +281,5 @@
     </RelativeLayout>
 
 
+    </androidx.drawerlayout.widget.DrawerLayout>
 
-
-
-</androidx.drawerlayout.widget.DrawerLayout>

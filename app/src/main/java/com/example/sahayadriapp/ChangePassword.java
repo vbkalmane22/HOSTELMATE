@@ -3,15 +3,10 @@ package com.example.sahayadriapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-
 import android.app.ProgressDialog;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -23,54 +18,40 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
-public class LogIN extends AppCompatActivity {
-    private Button btn1;
-    private Button login;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class ChangePassword extends AppCompatActivity {
+EditText usn_var,password_var,password2_var;
+Button verify_btn,reset_btn;
+    String PASSWORD_PATTERN = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d).{6,}$";
     ProgressDialog progressDialog;
-    EditText usn_var,password_var;
-public static final String SHARED_PREFS="sharedPrefs";
-    public static final String EXTRA_USN="com.example.sahayadriapp.extra.USN";
-
-
-
+    FirebaseDatabase firebaseDatabase;
+    DatabaseReference reference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_change_password);
 
-
-        setContentView(R.layout.login);
-
-        //getSupportActionBar().hide();
-
-
-
-
-        //checkbox();
-       Button btn1=findViewById(R.id.button2);
-        Button login =findViewById(R.id.button7);
         usn_var=findViewById(R.id.editusn);
-        password_var=findViewById(R.id.editTextTextPassword);
+        password_var=findViewById(R.id.editTextPassword);
+        password2_var=findViewById(R.id.editTextPassword2);
+        verify_btn=findViewById(R.id.button7);
+        reset_btn=findViewById(R.id.button8);
 
+        reset_btn.setEnabled(false);
+        password2_var.setEnabled(false);
 
-     btn1.setOnClickListener(new View.OnClickListener() {
-         @Override
-         public void onClick(View v) {
-             Intent intent=new Intent(LogIN.this,SignUp.class);
-             startActivity(intent);
-             finish();
-         }
-     });
-
-
-        login.setOnClickListener(new View.OnClickListener() {
+        verify_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 String usn=usn_var.getText().toString();
                 String password=password_var.getText().toString();
-                progressDialog=new ProgressDialog(LogIN.this);
+                progressDialog=new ProgressDialog(ChangePassword.this);
                 progressDialog.setCancelable(false);
-                progressDialog.setMessage("Logging in...");
+                progressDialog.setMessage("Verifying...");
                 progressDialog.show();
+
                 if(!usn.isEmpty())
                 {
                     usn_var.setError((null));
@@ -98,11 +79,10 @@ public static final String SHARED_PREFS="sharedPrefs";
 
                                         if(progressDialog.isShowing())
                                             progressDialog.dismiss();
-                                       // Toast.makeText(LogIN.this, "Log In successfull", Toast.LENGTH_SHORT).show();
-                                        Intent intent=new Intent(LogIN.this,AfterLogin.class);
-                                        intent.putExtra(EXTRA_USN,usn);
-                                        startActivity(intent);
-                                        finish();
+                                         Toast.makeText(ChangePassword.this, "Verified..Enter the new password", Toast.LENGTH_SHORT).show();
+                                        password2_var.setEnabled(true);
+                                        verify_btn.setEnabled(false);
+                                       // reset_btn.setEnabled(true);
                                     }
                                     else{
                                         password_var.setError("Wrong Password");
@@ -138,9 +118,65 @@ public static final String SHARED_PREFS="sharedPrefs";
             }
         });
 
+        reset_btn.setEnabled(true);
+        reset_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String password2=password2_var.getText().toString();
+                String usn=usn_var.getText().toString();
+                String password=password_var.getText().toString();
+                if(!password2.isEmpty()){
+                    password2_var.setError((null));
+                    if(!usn.isEmpty()){
+                        usn_var.setError(null);
+                        if(!password.isEmpty())
+                        {
+                            password_var.setError(null);
+                            if (validatePassword(password2))
+                            {
+                                    firebaseDatabase = FirebaseDatabase.getInstance();
+                                    reference = firebaseDatabase.getReference("datauser");
+
+                                    String usn_s = usn_var.getText().toString();
+                                    String password2_s = password2_var.getText().toString();
+
+                                   stroingdatas stroingdatas = new stroingdatas(usn_s,password2_s);
+                                    reference.child(usn_s).setValue(stroingdatas);
+                                    Toast.makeText(ChangePassword.this, "Successfully Changed", Toast.LENGTH_SHORT).show();
+
+
+                            }
+                                else
+                                {
+                                    password2_var.setError("Enter Correct Password");
+                                }
+
+
+
+                        }
+                        else
+                        {
+                            password_var.setError("Please enter password");
+                        }
+                    }
+                    else
+                    {
+                        usn_var.setError("Please enter USN");
+                    }
+                }
+
+            }
+        });
+
+
+
+    }
+private boolean validatePassword(String password) {
+        Pattern pattern = Pattern.compile(PASSWORD_PATTERN);
+        Matcher matcher =pattern.matcher(password);
+        return matcher.matches();
+        }
 
 
     }
 
-
-}

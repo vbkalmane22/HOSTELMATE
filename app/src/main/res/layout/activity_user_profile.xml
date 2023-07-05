@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/logback"
+    tools:context=".UserProfile">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:layout_marginTop="55dp"
+
+        >
+
+        <ImageView
+            android:id="@+id/imageView6"
+            android:layout_width="82dp"
+            android:layout_height="120dp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="45dp"
+
+            app:srcCompat="@drawable/ic_baseline_person_24" />
+
+        <TextView
+            android:id="@+id/textView12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="65dp"
+            android:fontFamily="@font/space_grotesk_bold"
+            android:text="Vinayak B Kalmane"
+            android:textColor="#ffffff"
+            android:textSize="35sp" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="293dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="393dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="293dp">
+
+        <Button
+            android:id="@+id/button11"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="View Leave History"
+            android:textColor="#ffffff"
+            app:backgroundTint="#ed8689" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="393dp">
+
+        <Button
+            android:id="@+id/button17"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="Change Password"
+            android:textColor="#ffffff"
+            app:backgroundTint="#ed8689" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="493dp">
+
+        <Button
+            android:id="@+id/button12"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:text="LOGOUT"
+            android:textColor="#000000"
+            app:backgroundTint="#ffe820" />
+    </LinearLayout>
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/nav_round"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/black"
+        app:menu="@menu/item_menu" />
+
+</RelativeLayout>
