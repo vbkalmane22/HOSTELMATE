@@ -43,6 +43,9 @@ public class AfterLogin extends AppCompatActivity{
     public static String USN = "com.example.sahyadriapp.USN";
     public static final String FEES_USN = "com.example.sahyadriapp.feeUSN";
     public static final String ISSUE_USN = "com.example.sahyadriapp.issueUSN";
+    public static final String USER_USN = "com.example.sahyadriapp.userUSN";
+    public static final String USER_NAME = "com.example.sahyadriapp.userNAME";
+    public static final String USER_BRANCH = "com.example.sahyadriapp.userbranch";
 
 
     @Override
@@ -58,7 +61,7 @@ public class AfterLogin extends AppCompatActivity{
         Button notices = findViewById(R.id.button6);
         Button issues = findViewById(R.id.button5);
         TextView textname = findViewById(R.id.textView2);
-        TextView header_textview=findViewById(R.id.header_textview);
+
         TextView textusn = findViewById(R.id.textView3);
         TextView textbranch = findViewById(R.id.textView4);
         btm = findViewById(R.id.bottom_navigation);
@@ -68,7 +71,7 @@ public class AfterLogin extends AppCompatActivity{
         String usn2 = intent.getStringExtra(LogIN.EXTRA_USN);
         textusn.setText(usn2);
 
-
+       String user_usn=textusn.getText().toString();
         String leave_history_usn = textusn.getText().toString();
 
         if (usn2.contains("CS") || usn2.contains("cs")) {
@@ -148,7 +151,7 @@ public class AfterLogin extends AppCompatActivity{
 
 
 
-
+        String user_branch=textbranch.getText().toString();
         btm.setSelectedItemId(R.id.home);
         btm.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -165,6 +168,12 @@ public class AfterLogin extends AppCompatActivity{
                         return true;
                     case R.id.user:
                         Intent intent1 = new Intent(getApplicationContext(), UserProfile.class);
+                        Bundle bundle=new Bundle();
+                        bundle.putString("USER_USN",user_usn);
+                        bundle.putString("USER_BRANCH",user_branch);
+                        intent1.putExtras(bundle);
+                       // intent1.putExtra(USER_USN,user_usn);
+                        //intent1.putExtra(USER_BRANCH,user_branch);
                         startActivity(intent1);
                         overridePendingTransition(0, 0);
 

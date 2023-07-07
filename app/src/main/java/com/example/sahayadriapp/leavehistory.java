@@ -48,7 +48,36 @@ public class leavehistory extends AppCompatActivity {
 
 
 
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                // Retrieve the leave application details from Firestore
+                DocumentReference leaveRef = db.collection("leaves").document(leave_history_usn);
+                leaveRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+                    @Override
+                    public void onSuccess(DocumentSnapshot documentSnapshot) {
+                        if (documentSnapshot.exists()) {
+                            // Retrieve the values from the document snapshot
+                            String reason = documentSnapshot.getString("reason");
+                            String date = documentSnapshot.getString("date_of_apply");
+                            String status = documentSnapshot.getString("status");
 
+                            // Update the corresponding TextViews with the retrieved values
+                            reason_leave.setText(reason);
+                            date_leave.setText(date);
+                            status_leave.setText(status);
+                        } else {
+                            Toast.makeText(leavehistory.this, "Leave application not found", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(leavehistory.this, "Error retrieving leave application", Toast.LENGTH_SHORT).show();
+                    }
+                });
+            }
+        });
 
         btm.setSelectedItemId(R.id.leave);
 

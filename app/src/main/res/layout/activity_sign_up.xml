@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/logback"
+
     android:visibility="visible"
 
 
@@ -17,11 +17,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="153dp"
-        android:layout_marginBottom="377dp"
+        android:layout_marginEnd="145dp"
+        android:layout_marginBottom="717dp"
         android:fontFamily="@font/space_grotesk_bold"
         android:text="SignUP"
-        android:textColor="#ffffff"
+        android:textColor="#000000"
         android:textSize="30sp"
         android:textStyle="bold" />
 
@@ -95,7 +95,7 @@
         android:layout_height="269dp"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
-        android:layout_marginEnd="13dp"
-        android:layout_marginBottom="493dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginBottom="392dp"
         android:src="@drawable/loginphoto" />
 </RelativeLayout>
