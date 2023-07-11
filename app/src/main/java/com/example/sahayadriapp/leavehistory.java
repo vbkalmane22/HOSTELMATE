@@ -3,6 +3,7 @@ package com.example.sahayadriapp;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -24,7 +25,7 @@ import com.google.firebase.firestore.auth.User;
 
 public class leavehistory extends AppCompatActivity {
     BottomNavigationView btm;
-
+    ProgressDialog progressDialog;
     private Button btn;
     public static String USN="com.example.sahyadriapp.USN";
     @Override
@@ -52,11 +53,21 @@ public class leavehistory extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Retrieve the leave application details from Firestore
+
+                progressDialog=new ProgressDialog(leavehistory.this);
+                progressDialog.setCancelable(false);
+                progressDialog.setMessage("Wait a moment...");
+                progressDialog.show();
+
+
                 DocumentReference leaveRef = db.collection("leaves").document(leave_history_usn);
                 leaveRef.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
                     @Override
                     public void onSuccess(DocumentSnapshot documentSnapshot) {
                         if (documentSnapshot.exists()) {
+
+                            if(progressDialog.isShowing())
+                                progressDialog.dismiss();
                             // Retrieve the values from the document snapshot
                             String reason = documentSnapshot.getString("reason");
                             String date = documentSnapshot.getString("date_of_apply");
@@ -67,12 +78,14 @@ public class leavehistory extends AppCompatActivity {
                             date_leave.setText(date);
                             status_leave.setText(status);
                         } else {
+                            progressDialog.dismiss();
                             Toast.makeText(leavehistory.this, "Leave application not found", Toast.LENGTH_SHORT).show();
                         }
                     }
                 }).addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        progressDialog.dismiss();
                         Toast.makeText(leavehistory.this, "Error retrieving leave application", Toast.LENGTH_SHORT).show();
                     }
                 });

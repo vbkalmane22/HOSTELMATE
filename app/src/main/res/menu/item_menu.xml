@@ -9,7 +9,7 @@
         android:id="@+id/leave"
 
         android:icon="@drawable/ic_baseline_event_note_24"
-        android:title="Leave History"/>
+        android:title="Leave Status"/>
     <item
         android:id="@+id/user"
         android:icon="@drawable/ic_baseline_person_24"

@@ -24,7 +24,10 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.HashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class Applyfroleave extends AppCompatActivity {
@@ -57,6 +60,11 @@ public class Applyfroleave extends AppCompatActivity {
         usn.setFocusableInTouchMode(false);
 
 
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy", Locale.getDefault());
+        String currentDate = dateFormat.format(calendar.getTime());
+        dateoa.setText(currentDate);
+        dateoa.setEnabled(false);
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("datauser");
         reference.orderByChild("usn").equalTo(usn2).addListenerForSingleValueEvent(new ValueEventListener() {
@@ -84,11 +92,14 @@ public class Applyfroleave extends AppCompatActivity {
                 progressDialog.setMessage("Submitting the data...");
                 progressDialog.show();
 
+
                 String name1 = name.getText().toString().trim();
                 String usn1 = usn.getText().toString().trim();
                 String reason1 = reason.getText().toString().trim();
                 String parent_contact1 = parent_contact.getText().toString().trim();
                 String dateoa1 = dateoa.getText().toString().trim();
+
+
                   if(!name1.isEmpty())
                   {
                       name.setError((null));
@@ -109,6 +120,16 @@ public class Applyfroleave extends AppCompatActivity {
                     usn.setError("Enter USN");
                     progressDialog.dismiss();
                 }
+                if(!dateoa1.isEmpty())
+                {
+                    dateoa.setError((null));
+
+                }
+                else
+                {
+                    dateoa.setError("Enter date");
+                    progressDialog.dismiss();
+                }
                 if(!reason1.isEmpty())
                 {
                     reason.setError((null));
@@ -116,21 +137,11 @@ public class Applyfroleave extends AppCompatActivity {
                 }
                 else
                 {
-                    reason.setError("Enter reason");
+                    reason.setError("Enter Phone number");
                     progressDialog.dismiss();
                 }
-                if(!parent_contact1.isEmpty())
-                {
+                if(!parent_contact1.isEmpty()) {
                     parent_contact.setError((null));
-
-                }
-                else
-                {
-                    parent_contact.setError("Enter Phone number");
-                    progressDialog.dismiss();
-                }
-                if(!dateoa1.isEmpty()) {
-                    dateoa.setError((null));
                    // progressDialog.dismiss();
 
                     Map<String, Object> user = new HashMap<>();
@@ -162,7 +173,8 @@ public class Applyfroleave extends AppCompatActivity {
                 }
                 else
                 {
-                    dateoa.setError("Enter date");
+                    parent_contact.setError("Enter contact");
+                    progressDialog.dismiss();
                 }
 
 

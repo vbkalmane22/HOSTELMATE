@@ -19,12 +19,6 @@
             android:name=".ChangePassword"
             android:exported="false" />
         <activity
-            android:name=".Dosanddonts"
-            android:exported="false" />
-        <activity
-            android:name=".FoodMenu"
-            android:exported="false" />
-        <activity
             android:name=".UserProfile"
             android:exported="false" />
         <activity

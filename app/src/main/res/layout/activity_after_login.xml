@@ -85,27 +85,27 @@
         </androidx.appcompat.widget.LinearLayoutCompat>
 
 
-        <TextView
-            android:layout_width="175dp"
-            android:layout_height="150dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="205dp"
-            android:layout_marginRight="205dp"
-            android:layout_marginBottom="272dp"
-            android:background="@drawable/gradient_background" />
+    <TextView
+        android:layout_width="175dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="205dp"
+        android:layout_marginRight="205dp"
+        android:layout_marginBottom="272dp"
+        android:background="@drawable/gradient_background" />
 
-        <TextView
-            android:layout_width="175dp"
-            android:layout_height="150dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="9dp"
-            android:layout_marginRight="9dp"
-            android:layout_marginBottom="272dp"
-            android:background="@drawable/gradientbackground2" />
+    <TextView
+        android:layout_width="175dp"
+        android:layout_height="150dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:layout_marginBottom="272dp"
+        android:background="@drawable/gradientbackground2" />
 
         <TextView
             android:layout_width="175dp"
@@ -129,35 +129,35 @@
             android:layout_marginBottom="89dp"
             android:background="@drawable/gradientbackground4" />
 
-        <TextView
-            android:id="@+id/textView44"
-            android:layout_width="150dp"
-            android:layout_height="70dp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="221dp"
-            android:layout_marginRight="221dp"
-            android:layout_marginBottom="343dp"
-            android:fontFamily="@font/space_grotesk_bold"
-            android:text="Apply For Leave"
-            android:textColor="#000000"
-            android:textSize="25sp" />
+    <TextView
+        android:id="@+id/textView44"
+        android:layout_width="150dp"
+        android:layout_height="70dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="221dp"
+        android:layout_marginRight="221dp"
+        android:layout_marginBottom="343dp"
+        android:fontFamily="@font/space_grotesk_bold"
+        android:text="Apply For Leave"
+        android:textColor="#000000"
+        android:textSize="25sp" />
 
-        <TextView
-            android:id="@+id/textView55"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="27dp"
-            android:layout_marginRight="27dp"
-            android:layout_marginBottom="368dp"
-            android:fontFamily="@font/space_grotesk_bold"
-            android:text="View the Fees"
-            android:textColor="#000000"
-            android:textSize="23sp" />
+    <TextView
+        android:id="@+id/textView55"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="27dp"
+        android:layout_marginRight="27dp"
+        android:layout_marginBottom="368dp"
+        android:fontFamily="@font/space_grotesk_bold"
+        android:text="View the Fees"
+        android:textColor="#000000"
+        android:textSize="23sp" />
 
         <TextView
             android:id="@+id/textView8"
@@ -189,35 +189,35 @@
             android:textColor="#000000"
             android:textSize="25sp" />
 
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="230dp"
-            android:layout_marginRight="230dp"
-            android:layout_marginBottom="295dp"
-            android:background="@drawable/ic_baseline_arrow_forward_24"
-            android:backgroundTint="#ffffff"
-            app:backgroundTint="#000000"
-            app:iconTint="#1C0202" />
+    <Button
+        android:id="@+id/button3"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="230dp"
+        android:layout_marginRight="230dp"
+        android:layout_marginBottom="295dp"
+        android:background="@drawable/ic_baseline_arrow_forward_24"
+        android:backgroundTint="#ffffff"
+        app:backgroundTint="#000000"
+        app:iconTint="#1C0202" />
 
-        <Button
-            android:id="@+id/button4"
-            android:layout_width="50dp"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="230dp"
-            android:layout_marginBottom="295dp"
-            android:background="@drawable/ic_baseline_arrow_forward_24"
-            android:backgroundTint="#000000"
-            app:backgroundTint="#000000"
-            app:iconTint="#1C0202" />
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="230dp"
+        android:layout_marginBottom="295dp"
+        android:background="@drawable/ic_baseline_arrow_forward_24"
+        android:backgroundTint="#000000"
+        app:backgroundTint="#000000"
+        app:iconTint="#1C0202" />
 
         <Button
             android:id="@+id/button5"
@@ -262,22 +262,22 @@
         android:textColor="#000000"
         android:textSize="20sp" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="30dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginTop="30dp"
-            android:layout_marginEnd="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginBottom="15dp"
-            android:background="@drawable/nav_round"
-            android:elevation="2dp"
-            app:itemIconSize="30dp"
-            app:itemIconTint="@color/black"
-            app:menu="@menu/item_menu" />
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="30dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginBottom="15dp"
+        android:background="@drawable/nav_round"
+        android:elevation="2dp"
+        app:itemIconSize="30dp"
+        app:itemIconTint="@color/black"
+        app:menu="@menu/item_menu" />
 
 
 
